@@ -1,0 +1,24 @@
+.footer {
+  margin-top: auto;
+  padding: 12rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    transition: ease-in-out 150ms;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  }
+}
