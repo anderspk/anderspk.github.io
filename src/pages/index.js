@@ -19,7 +19,7 @@ export default () => {
               url
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 400) {
+                  fluid(maxWidth: 400, quality: 90) {
                     ...GatsbyImageSharpFluid
                   }
                 }

@@ -1,28 +1,31 @@
 import React from "react"
-import confetti from "canvas-confetti"
+import Reward from "react-rewards"
 import footerStyles from "./footer.module.scss"
 
 const Footer = () => {
-  const emoji = React.useRef(null)
-  const clicked = () => {
-    const { innerHeight: height } = window
-
-    confetti({
-      ticks: 25,
-      shapes: ["circle"],
-      spread: 120,
-      origin: {
-        y:
-          1.025 - (height - emoji.current.getBoundingClientRect().top) / height,
-      },
-    })
-  }
+  let reward
 
   return (
     <footer className={footerStyles.footer}>
-      <button ref={emoji} onClick={clicked}>
-        🎉
-      </button>
+      <Reward
+        ref={ref => {
+          reward = ref
+        }}
+        type="confetti"
+        config={{
+          lifetime: 100,
+          spread: 90,
+          startVelocity: 20,
+          springAnimation: false,
+          elementCount: 35,
+        }}
+      >
+        <button onClick={() => reward.rewardMe()}>
+          <span role="img" aria-label="celebrate emoji">
+            🎉
+          </span>
+        </button>
+      </Reward>
       <span>Takk for besøket!</span>
     </footer>
   )
