@@ -44,7 +44,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15) !important;
   }
 
-  p:nth-child(n + 1) {
+  p span:nth-child(n + 1) {
     margin-bottom: 5%;
   }
 }

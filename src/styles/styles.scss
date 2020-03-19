@@ -28,3 +28,9 @@ body {
   font-family: "Roboto", sans-serif;
   color: #616161;
 }
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 14px;
+  }
+}

@@ -17,5 +17,6 @@ previewImage: ./images/crudpi_preview.png
 Crudpi er en gratis tjeneste lagd for utviklere som lar deg lage et CRUD API og fylle den med egendefinert dummydata på sekunder.
 
 ![Image of crudpi homepage](./images/crudpi_full.jpg)
-
 ![Second crudpi image](./images/crudpi1.png)
+![Third crudpi image](./images/crudpi2.png)
+![Fourth crudpi image](./images/crudpi3.png)
