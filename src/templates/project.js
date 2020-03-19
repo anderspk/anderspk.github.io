@@ -2,20 +2,28 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout/layout"
+import projectStyles from "./project.module.scss"
 
-const Project = ({ data, pageContext: { slug } }) => {
+const Project = ({ data }) => {
   const {
     markdownRemark: { frontmatter, html },
   } = data
 
   return (
     <Layout>
-      <h2>{frontmatter.title}</h2>
-      <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <div className={projectStyles.container}>
+        <Img fixed={frontmatter.previewImage.childImageSharp.fixed} />
+        <h1>
+          {frontmatter.title}
+          <span role="img" aria-label="fire emojis">
+            🔥🔥🔥
+          </span>
+        </h1>
+        <div
+          className={projectStyles.blogPostContent}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
     </Layout>
   )
 }
@@ -27,10 +35,10 @@ export const pageQuery = graphql`
       frontmatter {
         date
         title
-        featuredImage {
+        previewImage {
           childImageSharp {
-            fluid(maxWidth: 1600) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 150) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

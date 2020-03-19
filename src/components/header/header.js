@@ -1,11 +1,14 @@
 import React from "react"
 import Avatar from "../../images/avatar.jpg"
 import headerStyles from "./header.module.scss"
+import { Link } from "gatsby"
 
 const Header = () => (
   <div className={headerStyles.header}>
     <div className={headerStyles.introduction}>
-      <img src={Avatar} alt="Avatar" />
+      <Link to="/">
+        <img src={Avatar} alt="Avatar" />
+      </Link>
       <div className="right">
         <h1>Anders Philip Kamsvåg</h1>
         <nav className={headerStyles.navbar}>

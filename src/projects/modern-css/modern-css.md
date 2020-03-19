@@ -4,6 +4,7 @@ date: "17.02.2020"
 description: "Første nettsiden jeg lagde som inneholder kun én tutorial innen html/css..."
 url: "https://modern-css.com"
 featuredImage: modern-css.jpg
+previewImage: crudpi_thumbnail.jpg
 ---
 
 Lorem ipsum

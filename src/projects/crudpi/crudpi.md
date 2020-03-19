@@ -1,20 +1,21 @@
 ---
 title: "Crudpi.io"
 date: "18.02.2020"
-description: "En gratis tjeneste som lar utviklere bygge et online CRUD api, og fylle det med dummy-data, på sekunder"
+description: "🔥En gratis tjeneste som lar utviklere bygge et online CRUD api, og fylle det med dummy-data, på sekunder"
 url: "https://crudpi.io"
-featuredImage: crudpi.jpg
+featuredImage: ./images/crudpi.jpg
+previewImage: ./images/crudpi_preview.png
 ---
 
-Lorem ipsum
+- React
+- Nodejs
+- MongoDB
+- AWS
 
-## Test
+- 🌍https://crudpi.io
 
-![Dude](./crudpi.jpg)
+Crudpi er en gratis tjeneste lagd for utviklere som lar deg lage et CRUD API og fylle den med egendefinert dummydata på sekunder.
 
-Dude this is a total test!
+![Image of crudpi homepage](./images/crudpi_full.jpg)
 
-1. omnis earum nobis
-2. architecto, quia
-3. officiis aperiam
-4. voluptate quaerat
+![Second crudpi image](./images/crudpi1.png)
