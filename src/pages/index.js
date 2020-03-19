@@ -46,7 +46,6 @@ export default () => {
           😄
         </span>
       </p>
-      <div className={indexStyles.horizontalLine}>Prosjekter</div>
       <ol className={indexStyles.projectsList}>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li className={indexStyles.project} key={node.id}>
