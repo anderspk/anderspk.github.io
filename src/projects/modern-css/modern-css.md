@@ -1,6 +1,6 @@
 ---
 title: "modern-css.com"
-date: "17.02.2020"
+date: "18.08.2018"
 description: "🔥Første nettsiden jeg lagde som inneholder kun én tutorial innen html/css..."
 url: "https://modern-css.com"
 featuredImage: ./images/modern-css.jpg

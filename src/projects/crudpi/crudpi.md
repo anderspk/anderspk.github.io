@@ -1,6 +1,6 @@
 ---
 title: "Crudpi.io"
-date: "18.02.2020"
+date: "04.08.2019"
 description: "🔥En gratis tjeneste som lar utviklere bygge et online CRUD api, og fylle det med dummy-data, på sekunder"
 url: "https://crudpi.io"
 featuredImage: ./images/crudpi.jpg
