@@ -9,7 +9,7 @@ import Img from "gatsby-image"
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___date] }) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {
@@ -17,9 +17,10 @@ export default () => {
               date
               description
               url
+              repo
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 400, quality: 90) {
+                  fluid(maxWidth: 400, quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -58,15 +59,27 @@ export default () => {
             <Link to={`/${node.fields.slug}`}>
               <h2>{node.frontmatter.title}</h2>
             </Link>
-            <span className={indexStyles.date}>{node.frontmatter.date}</span>
+            <span className={indexStyles.date}>
+              {new Date(node.frontmatter.date)
+                .toLocaleDateString()
+                .replace(/\//g, ".")}
+            </span>
             <p>{node.frontmatter.description}</p>
-            <ul>
+            <ul className={indexStyles.links}>
               <li>
                 <span role="img" aria-label="globe emoji">
                   🌍
                 </span>
                 <a href={node.frontmatter.url}>{node.frontmatter.url}</a>
               </li>
+              {node.frontmatter.repo && (
+                <li>
+                  <span role="img" aria-label="coder emoji">
+                    👨‍💻
+                  </span>
+                  <a href={node.frontmatter.repo}>{node.frontmatter.repo}</a>
+                </li>
+              )}
             </ul>
           </li>
         ))}

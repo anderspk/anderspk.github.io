@@ -1,8 +1,9 @@
 ---
 title: "modern-css.com"
-date: "18.08.2018"
-description: "🔥Første nettsiden jeg lagde som inneholder kun én tutorial innen html/css..."
+date: "2018.08.18"
+description: "Første nettsiden jeg lagde som inneholder kun én tutorial innen html/css..."
 url: "https://modern-css.com"
+repo: ""
 featuredImage: ./images/modern-css.jpg
 previewImage: ./images/modern-css_preview.png
 ---
