@@ -1,0 +1,62 @@
+---
+import { PROJECTS } from '../consts';
+import MainLayout from '../layouts/MainLayout.astro';
+import Logo from '../images/logo.png';
+import { Image } from 'astro:assets';
+import ProjectPreview from '../components/ProjectPreview.astro';
+
+const projectsHeadingColor = '#dbdbdb';
+---
+
+<style define:vars={{ projectsHeadingColor }}>
+  h1 {
+    font-family: 'Courgette', cursive;
+    text-align: center;
+    font-size: 6rem;
+    color: #00aaff;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--projectsHeadingColor);
+  }
+
+  h2::before,
+  h2::after {
+    content: '';
+    display: block;
+    height: 1px;
+    flex: 1;
+    background-color: var(--projectsHeadingColor);
+  }
+
+  img {
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+</style>
+<MainLayout>
+  <h1>Costello</h1>
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      {PROJECTS.map((project) => <ProjectPreview {...project} />)}
+    </div>
+  </section>
+</MainLayout>

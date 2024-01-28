@@ -1,0 +1,35 @@
+---
+const { title, description, devices, status } = Astro.props;
+---
+
+<style>
+  div {
+    background-color: #17181c;
+    padding: 0.5rem 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    margin-bottom: 1rem;
+  }
+
+  .status {
+    margin-top: auto;
+  }
+
+  .status span {
+    color: #efbd61;
+  }
+</style>
+<div>
+  <h3>{title}</h3>
+  <p class="description">{description}</p>
+  <p class="status">Status: <span>{status}</span></p>
+</div>
