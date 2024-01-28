@@ -36,15 +36,15 @@ import { Image } from 'astro:assets';
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Courgette&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:opsz,wght@9..40,100;9..40,200;9..40,400&display=swap"
       rel="stylesheet"
     />
     <title>Costello</title>
   </head>
   <body>
+    <Image src={DystopianRobot} alt="Dystopian Robot" />
     <div class="layout-container">
       <slot />
     </div>
-    <Image src={DystopianRobot} alt="Dystopian Robot" />
   </body>
 </html>
