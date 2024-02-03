@@ -2,30 +2,58 @@
 const { title, description, status } = Astro.props;
 ---
 
-<style>
-  div {
+<style lang="scss">
+  project-preview {
     background-color: #17181c;
     padding: 0.5rem 1rem;
     color: white;
     display: flex;
     flex-direction: column;
-    outline: 1px solid #323232;
+    border: 1px solid #323232;
+    outline: 2px solid transparent;
     position: relative;
-  }
+    transition:
+      all cubic-bezier(0, 0, 0.2, 1) 0.15s,
+      outline ease-out 0.5s 0.5s;
+    border-radius: 5px;
 
-  div:hover {
-    cursor: pointer;
-  }
+    &::before {
+      content: '';
+      left: 0;
+      right: 0;
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      z-index: -1;
+      box-shadow: 0 rgba(0, 0, 0, 0.8);
+      transition: cubic-bezier(0, 0, 0.2, 1) 0.15s;
+    }
 
-  div::before {
-    content: '';
-    left: 0;
-    right: 0;
-    position: absolute;
-    top: 50%;
-    bottom: 0;
-    z-index: -1;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.04) rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
+      transition:
+        all cubic-bezier(0, 0, 0.2, 1) 0.15s,
+        outline 1s;
+
+      outline: 2px solid rgba(0, 102, 255);
+
+      &::before {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          at var(--x-percentage) var(--y-percentage),
+          rgba(255, 255, 255, 0.05) 20%,
+          transparent 95%
+        );
+        pointer-events: none;
+      }
+    }
   }
 
   h3 {
@@ -34,19 +62,54 @@ const { title, description, status } = Astro.props;
   }
 
   .description {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .status {
     margin-top: auto;
-  }
-
-  .status span {
-    color: #efbd61;
+    font-size: 0.9rem;
+    span {
+      color: #efbd61;
+    }
   }
 </style>
-<div>
+<project-preview>
   <h3>{title}</h3>
   <p class="description">{description}</p>
   <p class="status">Status: <span>{status}</span></p>
-</div>
+</project-preview>
+<script>
+  class ProjectPreview extends HTMLElement {
+    private boundingClientRect: DOMRect;
+
+    constructor() {
+      super();
+
+      this.boundingClientRect = this.getBoundingClientRect();
+      this.addEventListener('mousemove', this.tiltEffect);
+
+      this.addEventListener('mouseenter', () => {
+        // this.boundingClientRect = this.getBoundingClientRect();
+      });
+
+      this.addEventListener('mouseleave', () => {
+        this.style.transform = '';
+      });
+    }
+
+    private tiltEffect = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const xRatio = (clientX - this.boundingClientRect.x) / this.offsetWidth;
+      const yRatio = (clientY - this.boundingClientRect.y) / this.offsetHeight;
+      const xRotation = xRatio * 10 - 5;
+      const yRotation = -(yRatio * 10 - 5);
+
+      this.style.setProperty('--x-rotation', `${yRotation}deg`);
+      this.style.setProperty('--y-rotation', `${xRotation}deg`);
+      this.style.setProperty('--x-percentage', `${xRatio * 100}%`);
+      this.style.setProperty('--y-percentage', `${yRatio * 100}%`);
+    };
+  }
+
+  customElements.define('project-preview', ProjectPreview);
+</script>
