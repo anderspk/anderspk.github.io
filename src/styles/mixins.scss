@@ -1,0 +1,23 @@
+@mixin allBelow($size) {
+  @if $size == large {
+    @media screen and (max-width: 60rem) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media screen and (max-width: 40rem) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (hover: none), (pointer: coarse) {
+    @content;
+  }
+}

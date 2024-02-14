@@ -3,6 +3,8 @@ const { title, description, status } = Astro.props;
 ---
 
 <style lang="scss">
+  @import '@styles/mixins.scss';
+
   project-preview {
     background-color: #17181c;
     padding: 0.5rem 1rem;
@@ -31,7 +33,15 @@ const { title, description, status } = Astro.props;
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.04) rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
+
+      @include desktop {
+        transform: scale(1.04) rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
+      }
+
+      @include mobile {
+        transform: scale(1.04);
+      }
+
       transition:
         all cubic-bezier(0, 0, 0.2, 1) 0.15s,
         outline 1s;

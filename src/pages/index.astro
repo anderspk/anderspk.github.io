@@ -1,7 +1,7 @@
 ---
 import { PROJECTS } from '../consts';
-import MainLayout from '../layouts/MainLayout.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
+import MainLayout from '@layouts/MainLayout.astro';
+import ProjectPreview from '@components/ProjectPreview.astro';
 
 const projectsHeadingColor = '#dbdbdb';
 ---
@@ -45,7 +45,7 @@ const projectsHeadingColor = '#dbdbdb';
     perspective: 800px;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     h1 {
       font-size: 4rem;
     }
