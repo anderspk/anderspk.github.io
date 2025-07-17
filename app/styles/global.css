@@ -1,0 +1,27 @@
+:root {
+	font-family: "Montserrat", sans-serif;
+}
+
+:root,
+body {
+	min-height: 100%;
+	height: 100%;
+	@media (prefers-color-scheme: dark) {
+		color-scheme: dark;
+	}
+}
+
+body {
+	padding-top: 1rem;
+	background: linear-gradient(to bottom, #000000 0%, #010414 60%, #0a192f 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}

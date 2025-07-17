@@ -1,0 +1,44 @@
+body {
+	display: grid;
+	grid-template-columns: minMax(1rem, 1fr) minMax(auto, 1200px) minMax(
+			1rem,
+			1fr
+		);
+	grid-template-rows: 1fr auto 1rem;
+
+	.centered {
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	footer {
+		display: contents;
+
+		.mountains {
+			align-self: end;
+			grid-row: 2 / -1;
+			grid-column: 1 / -1;
+		}
+
+		.myself {
+			grid-row: 2;
+			grid-column: 2;
+			max-height: 250px;
+			justify-self: end;
+		}
+	}
+}
+
+.title {
+	font-family: "Courgette", cursive;
+	font-size: 2.5rem;
+	color: #00aaff;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.bg {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+}

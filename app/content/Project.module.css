@@ -1,0 +1,31 @@
+.header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.title {
+	margin: 0;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #1a1a1a;
+}
+
+.statusBadge {
+	padding: 0.25rem 0.75rem;
+	border-radius: 1rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: white;
+
+	&.live {
+		background-color: #10b981;
+	}
+
+	&.in-development {
+		background-color: #f59e0b;
+	}
+}

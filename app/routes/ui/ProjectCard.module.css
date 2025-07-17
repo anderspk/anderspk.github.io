@@ -1,0 +1,75 @@
+.projectPreview {
+	display: block;
+	background: rgba(15, 15, 35, 0.55);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	overflow: hidden;
+	backdrop-filter: blur(10px);
+	height: 100%;
+	position: relative;
+}
+
+.projectPreview:hover {
+	border-color: rgb(104, 104, 104);
+}
+
+.projectPreview img {
+	height: 8rem;
+	width: 100%;
+	object-fit: cover;
+}
+
+.statusBadge {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	padding: 0.25rem 0.75rem;
+	border-radius: 20px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.statusBadge.live {
+	background: rgba(34, 197, 94, 0.9);
+	color: white;
+}
+
+.statusBadge.inDevelopment {
+	background: rgba(251, 146, 60, 0.9);
+	color: white;
+}
+
+.details {
+	padding: 1.25rem;
+}
+
+.details h3 {
+	color: white;
+	margin-bottom: 0.75rem;
+	font-size: 1.125rem;
+	line-height: 1.4;
+}
+
+.details p {
+	color: rgb(156, 163, 175);
+	line-height: 1.5;
+	font-size: 0.875rem;
+	margin-bottom: 1rem;
+}
+
+.devices {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.deviceTag {
+	background: rgba(59, 130, 246, 0.2);
+	color: rgb(147, 197, 253);
+	padding: 0.25rem 0.5rem;
+	border-radius: 6px;
+	font-size: 0.75rem;
+	border: 1px solid rgba(59, 130, 246, 0.3);
+}
